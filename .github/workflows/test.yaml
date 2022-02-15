@@ -24,7 +24,9 @@ jobs:
       run: npm run test:unit
     - name: Build the app
       run: npm run build
+    - name: Delete dist folder
+      uses: JesseTG/rm@v1.0.2
       with:
-        script: bash ${{ github.workspace }}/scripts/run-e2e-android-debug.sh
+        path: ${{ github.workspace }}/dist
 
         
