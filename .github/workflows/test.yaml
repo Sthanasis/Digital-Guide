@@ -11,8 +11,8 @@ jobs:
       - name: Install Node
         run: npm install
   test:
-    name: Testing
+    name: Unit Testing
     needs: setup
     runs-on: ubuntu-latest
     steps:
-      run: npm test
+      run: npm run test:unit
