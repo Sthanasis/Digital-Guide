@@ -25,5 +25,5 @@ jobs:
     - name: Build the app
       run: npm run build
     - name: Delete dist
-      with:
+      uses:
         script: bash ${{ github.workspace }}/scripts/run-e2e-android-debug.sh
