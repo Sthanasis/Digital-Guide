@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Install Node
-        run: npm install
+        run: yarn install
   # test:
   #   name: Unit Testing
   #   needs: setup
