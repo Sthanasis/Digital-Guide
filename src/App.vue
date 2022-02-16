@@ -1,11 +1,21 @@
 <script setup>
-import ButtonVue from './components/UI/Button/Button.vue';
+import Button from './components/UI/Button/Button.vue';
+import './assets/base.scss';
 </script>
 
 <template>
-  <ButtonVue>
-    <p>test</p>
-  </ButtonVue>
+  <div
+    style="
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <div>
+      <Button btnType="danger">Test</Button>
+    </div>
+  </div>
 </template>
 
 <style></style>
