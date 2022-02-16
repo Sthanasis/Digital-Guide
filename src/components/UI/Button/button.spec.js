@@ -3,20 +3,20 @@ import ButtonVue from './Button.vue';
 import { describe, it, expect } from 'vitest';
 
 describe('Button Component', () => {
-  it('renders a button with title "click me"', () => {
+  it('Renders a button with title "click me"', () => {
     const wrapper = mount(ButtonVue, {
       props: { title: 'click me', clicked: () => {} },
     });
     expect(wrapper.text()).toContain('click me');
   });
-  it('passes a click event and triggers it', async () => {
+  it('Passes a click event and triggers it', async () => {
     const wrapper = mount(ButtonVue);
 
     await wrapper.find('button').trigger('click');
 
     expect(wrapper.emitted()).toHaveProperty('clicked');
   });
-  it('passes a paragraph element slot', () => {
+  it('Passes a paragraph element slot', () => {
     const wrapper = mount(ButtonVue, {
       slots: {
         default: '<p>Test</p>',
@@ -24,5 +24,13 @@ describe('Button Component', () => {
     });
 
     expect(wrapper.html()).toContain('<p>Test</p>');
+  });
+  it('Gets a danger class based on btnType prop', () => {
+    const wrapper = mount(ButtonVue, {
+      props: {
+        btnType: 'danger',
+      },
+    });
+    expect(wrapper.get('button').classes().includes('danger')).toBe(true);
   });
 });
