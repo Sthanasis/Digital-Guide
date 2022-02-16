@@ -16,6 +16,8 @@ function handleClick() {
 <template>
   <button @click="handleClick">
     {{ title && title }}
-    <slot name="children" />
+    <slot />
   </button>
 </template>
+
+<style scoped></style>

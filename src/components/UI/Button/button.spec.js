@@ -19,7 +19,7 @@ describe('Button Component', () => {
   it('passes a paragraph element slot', () => {
     const wrapper = mount(ButtonVue, {
       slots: {
-        children: '<p>Test</p>',
+        default: '<p>Test</p>',
       },
     });
 

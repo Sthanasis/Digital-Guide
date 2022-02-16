@@ -1,5 +1,11 @@
-<script setup></script>
+<script setup>
+import ButtonVue from './components/UI/Button/Button.vue';
+</script>
 
-<template></template>
+<template>
+  <ButtonVue>
+    <p>test</p>
+  </ButtonVue>
+</template>
 
 <style></style>
