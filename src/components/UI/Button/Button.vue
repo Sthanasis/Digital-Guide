@@ -52,4 +52,15 @@ function handleClick() {
       0px 0px 2px 4px rgba(163, 91, 91, 0.5);
   }
 }
+
+.success {
+  background-color: var(--color-success);
+  &:hover {
+    filter: brightness(0.9);
+  }
+  &:active {
+    box-shadow: 0px 0px 2px 4px rgba(53, 174, 22, 0.5),
+      0px 0px 2px 4px rgba(22, 140, 36, 0.283);
+  }
+}
 </style>

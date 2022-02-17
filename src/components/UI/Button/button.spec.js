@@ -9,6 +9,7 @@ describe('Button Component', () => {
     });
     expect(wrapper.text()).toContain('click me');
   });
+
   it('Passes a click event and triggers it', async () => {
     const wrapper = mount(ButtonVue);
 
@@ -16,6 +17,16 @@ describe('Button Component', () => {
 
     expect(wrapper.emitted()).toHaveProperty('clicked');
   });
+
+  it('Gets a danger class based on btnType prop', () => {
+    const wrapper = mount(ButtonVue, {
+      props: {
+        btnType: 'danger',
+      },
+    });
+    expect(wrapper.get('button').classes().includes('danger')).toBe(true);
+  });
+
   it('Passes a paragraph element slot', () => {
     const wrapper = mount(ButtonVue, {
       slots: {
@@ -24,13 +35,5 @@ describe('Button Component', () => {
     });
 
     expect(wrapper.html()).toContain('<p>Test</p>');
-  });
-  it('Gets a danger class based on btnType prop', () => {
-    const wrapper = mount(ButtonVue, {
-      props: {
-        btnType: 'danger',
-      },
-    });
-    expect(wrapper.get('button').classes().includes('danger')).toBe(true);
   });
 });
