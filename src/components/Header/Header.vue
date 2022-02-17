@@ -1,6 +1,7 @@
 <script setup>
 import NavLink from './NavLink/NavLink.vue';
 import { routes } from '../../router';
+import { toCapitalize } from '../../utilities';
 </script>
 
 <template>
@@ -17,7 +18,7 @@ import { routes } from '../../router';
         @navigate="navigate"
         :isActive="isActive"
         :isExactActive="isExactActive"
-        >{{ route.name.toUpperCase() }}</NavLink
+        >{{ toCapitalize(route.name) }}</NavLink
       >
     </router-link>
   </ul>
