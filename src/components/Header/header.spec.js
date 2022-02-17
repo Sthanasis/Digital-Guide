@@ -9,9 +9,12 @@ describe('Header Component', () => {
       props: {
         routes,
       },
+      global: {
+        stubs: ['router-link'],
+      },
     });
 
-    const elementList = wrapper.findAll('li');
-    expect(elementList.length === routes.length).toBe(true);
+    const itemCount = wrapper.find('ul').element.childElementCount;
+    expect(itemCount === routes.length).toBe(true);
   });
 });

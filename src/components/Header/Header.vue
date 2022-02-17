@@ -5,9 +5,21 @@ import { routes } from '../../router';
 
 <template>
   <ul class="navbar">
-    <NavLink v-for="route in routes" :key="route.name" :route="route">{{
-      route.name.toUpperCase()
-    }}</NavLink>
+    <router-link
+      v-for="route in routes"
+      :key="route.name"
+      :to="route.path"
+      custom
+      v-slot="{ href, navigate, isActive, isExactActive }"
+    >
+      <NavLink
+        :href="href"
+        @navigate="navigate"
+        :isActive="isActive"
+        :isExactActive="isExactActive"
+        >{{ route.name.toUpperCase() }}</NavLink
+      >
+    </router-link>
   </ul>
 </template>
 
